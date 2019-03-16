@@ -1,0 +1,12 @@
+lxc:
+    from:
+      type: docker
+      url: docker://ubuntu
+    import:
+      - lxc
+    run: |
+      cd /root
+      git clone /stacker/lxc
+      cd lxc
+      cp -r ../deb/lxc-*/debian .
+      debuild -b -uc -us

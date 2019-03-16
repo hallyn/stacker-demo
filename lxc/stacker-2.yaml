@@ -1,0 +1,25 @@
+build:
+    from:
+      type: docker
+      url: docker://ubuntu
+    run: |
+      sed -i 'p;s/ /-src /' /etc/apt/sources.list
+      apt-get update
+      apt-get -y build-dep lxc uidmap
+      apt-get -y install git ubuntu-dev-tools
+      cd /root
+      mkdir deb
+      cd deb
+      pull-lp-source lxc
+lxc:
+    from:
+      type: built
+      tag: build
+    import:
+      - lxc
+    run: |
+      cd /root
+      git clone /stacker/lxc
+      cd lxc
+      cp -r ../deb/lxc-*/debian .
+      debuild -b -uc -us
