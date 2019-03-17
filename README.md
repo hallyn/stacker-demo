@@ -40,7 +40,7 @@ and logged into it), begin by installing stacker:
 
 ```bash
 ubuntu@stacker:~/butrfs/lxc$ sudo snap install --classic go
-ubuntu@stacker:~/butrfs/lxc$ sudo apt install ubuntu-dev-tools libgpme-dev libcap-dev acl-dev liblxc-dev btrfs-tools
+ubuntu@stacker:~/butrfs/lxc$ sudo apt install ubuntu-dev-tools libgpgme-dev libcap-dev acl-dev liblxc-dev btrfs-tools
 ubuntu@stacker:~/butrfs/lxc$ git clone git://github.com/anuvu/stacker
 ubuntu@stacker:~/butrfs/lxc$ cd stacker
 ubuntu@stacker:~/butrfs/lxc$ make
